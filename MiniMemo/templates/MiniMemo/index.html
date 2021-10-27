@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+
+        <ul>
+        {% for c in categories.all %}
+            <div>
+                <input type="checkbox" name="checkedbox" value="{{ c.id }}">
+                <a href="/{{ c.id }}">{{ c.category }}</a>
+            </div>
+        {% endfor %}
+        </ul>
+            <input name="text" required>
+            <button name="addTask">ADD</button>
+            <button name="deleteTask" formnovalidate>DELETE</button>
+    </form>
+
+</body>
+</html>

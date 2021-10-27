@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+        {% for todo in todos.all %}
+            <div>
+            <input type="checkbox" name="checkedbox" value="{{ todo.id }}">
+                <label>{{ todo.text }}</label>
+            </div>
+        {% endfor %}
+        </ul>
+        <input name="text" required>
+        <button name="addTask">ADD</button>
+        <button name="deleteTask" formnovalidate>DELETE</button>
+    </form>
+
+</body>
+</html>
