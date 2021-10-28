@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g+r2y@13x_7ljnnzj+t%!-5l016(=1yknkwt)c6%7zww(5kf%w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://mini-memo-application.herokuapp.com/',
 'localhost',
@@ -65,7 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build')
+            os.path.join(BASE_DIR, 'frontend/build'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -131,9 +131,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'frontend/build/static')
-# ] 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend/build/static')
+] 
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000"
